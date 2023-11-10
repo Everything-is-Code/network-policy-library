@@ -1,0 +1,103 @@
+apiVersion: v1
+entries:
+  library-chart:
+  - apiVersion: v2
+    created: "2023-04-11T13:53:14.54609+02:00"
+    description: A Helm library chart for Kubernetes
+    digest: 9f43f8ac74f8680a6c8a2a7e81d7208bba6b7e8eadc8d04849279f96a93fc047
+    name: library-chart
+    type: library
+    urls:
+    - library-chart-1.0.10.tgz
+    version: 1.0.10
+  - apiVersion: v2
+    created: "2023-04-11T13:53:14.553057+02:00"
+    description: A Helm library chart for Kubernetes
+    digest: ee4e7e42fd4be5248b3da5d52050c6800ad95fd686a7299f07bbdafa5c6c586e
+    name: library-chart
+    type: library
+    urls:
+    - library-chart-1.0.9.tgz
+    version: 1.0.9
+  - apiVersion: v2
+    created: "2023-04-11T13:53:14.552136+02:00"
+    description: A Helm library chart for Kubernetes
+    digest: 437487f28c7094eecc10f3bcb72baf93a98d4796c20505f980159206fb1b9d60
+    name: library-chart
+    type: library
+    urls:
+    - library-chart-1.0.8.tgz
+    version: 1.0.8
+  - apiVersion: v2
+    created: "2023-04-11T13:53:14.550696+02:00"
+    description: A Helm library chart for Kubernetes
+    digest: bfbbcb951919d87e58e2a9ac83e3b53f0f39c360df094814ce94ca233a566777
+    name: library-chart
+    type: library
+    urls:
+    - library-chart-1.0.7.tgz
+    version: 1.0.7
+  - apiVersion: v2
+    created: "2023-04-11T13:53:14.549689+02:00"
+    description: A Helm library chart for Kubernetes
+    digest: f9c24902cd0143669399f12cb298a52538c19a980bff62e48570c12404910b85
+    name: library-chart
+    type: library
+    urls:
+    - library-chart-1.0.6.tgz
+    version: 1.0.6
+  - apiVersion: v2
+    created: "2023-04-11T13:53:14.549112+02:00"
+    description: A Helm library chart for Kubernetes
+    digest: 48a4aa0c707752e70e0eae82f818fff30c31d2f049de0e0ea3a4803dfad26bf0
+    name: library-chart
+    type: library
+    urls:
+    - library-chart-1.0.5.tgz
+    version: 1.0.5
+  - apiVersion: v2
+    created: "2023-04-11T13:53:14.548361+02:00"
+    description: A Helm library chart for Kubernetes
+    digest: 7d9ed2cc7b4ba04010de7fa068fc4ed47bbf8468be71b5016c88c7a85111cb50
+    name: library-chart
+    type: library
+    urls:
+    - library-chart-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
+    created: "2023-04-11T13:53:14.547629+02:00"
+    description: A Helm library chart for Kubernetes
+    digest: 974fb7ea5f4bc708f6035bf64b7de0e28947bcc40bf584c9f91d10e0f3fc7f37
+    name: library-chart
+    type: library
+    urls:
+    - library-chart-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v2
+    created: "2023-04-11T13:53:14.546901+02:00"
+    description: A Helm library chart for Kubernetes
+    digest: d047bb079dae8b5554e29cc5a7006d2468fbd760bc8d8a220b5827a347d5c8b6
+    name: library-chart
+    type: library
+    urls:
+    - library-chart-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    created: "2023-04-11T13:53:14.54564+02:00"
+    description: A Helm library chart for Kubernetes
+    digest: efce86f856ceee864ccbfc4286e91b379cb18f729c2d081b7698065980bf3ee2
+    name: library-chart
+    type: library
+    urls:
+    - library-chart-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    created: "2023-04-11T13:53:14.544659+02:00"
+    description: A Helm library chart for Kubernetes
+    digest: 5c706204f6fe7f265b34e0cd771e6ff51ea288581ff053a5dd040be5073e9982
+    name: library-chart
+    type: library
+    urls:
+    - library-chart-1.0.0.tgz
+    version: 1.0.0
+generated: "2023-04-11T13:53:14.543786+02:00"
