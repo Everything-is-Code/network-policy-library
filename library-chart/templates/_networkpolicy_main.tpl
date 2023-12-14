@@ -13,7 +13,13 @@ spec:
   {{ if .Values.networking.spec.ingress }}
     {{ - include "library-chart.ingress" . | nident 4 }}
   {{ end }}
+  {{ if .Values.networking.spec.ingress_wpodselector }}
+    {{ - include "library-chart.ingress" . | nident 4 }}
+  {{ end }}
   {{ if .Values.networkpolicy.spec.egress }}
+    {{ - include "library-chart.egress" . | nident 4 }}
+  {{ end }}
+  {{ if .Values.networkpolicy.spec.egress_wpodselector }}
     {{ - include "library-chart.egress" . | nident 4 }}
   {{ end }}
   policyType: {{ .Values.networkpolicy.spec.policytypes }}
