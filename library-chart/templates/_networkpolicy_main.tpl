@@ -1,10 +1,10 @@
 {{ define "network-policy-library.networkpolicy" }}
-{{- range .Values.networkpolicy }}
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: {{ .name}}
+  name: {{ .Release.Name }}-{{ .Values.networkpolicy.name}}
 spec:
+{{- range .Values.networkpolicy }}
   podSelector: {{ .spec.podselector }}
   {{- if .spec.ingress.enabled }}
   ingress:
@@ -30,7 +30,7 @@ spec:
               kubernetes.io/metadata.name: {{ .spec.egress.namespaceSelector}}
     {{ end }}
   {{ end }}
-  policyType: 
+  policyTypes: 
   {{- if .spec.ingress.enabled }}
     - Ingress
   {{ end }}
