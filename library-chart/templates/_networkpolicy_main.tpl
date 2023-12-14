@@ -20,6 +20,7 @@ spec:
     {{ end }}
   {{ end }}
   {{- if .Values.networkpolicy.spec.egress }}
+    {{- range .Values.networkpolicy.spec.egress }}
   egress:
     - ports:
         - protocol: {{ .protocol}}
@@ -29,6 +30,7 @@ spec:
         - namespaceSelector:
             matchLabels:
               kubernetes.io/metadata.name: {{ .namespaceSelector}}
+      {{ end }}
     {{ end }}
   {{ end }}
   policyTypes: 
