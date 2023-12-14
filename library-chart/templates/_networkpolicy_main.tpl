@@ -5,7 +5,7 @@ metadata:
   name: {{ .Release.Name }}-{{ .Values.networkpolicy.name}}
 spec:
   podSelector: {{ .Values.networkpolicy.spec.podselector }}
-  {{- if .Values.networkpolicy.spec.ingress.enabled }}
+  {{- if .Values.networkpolicy.enabled.ingress }}
     {{- range .Values.networkpolicy.spec.ingress }}
   ingress:
     - ports:
@@ -19,7 +19,7 @@ spec:
       {{ end }}  
     {{ end }}
   {{ end }}
-  {{- if .Values.networkpolicy.spec.egress }}
+  {{- if .Values.networkpolicy.enabled.egress }}
     {{- range .Values.networkpolicy.spec.egress }}
   egress:
     - ports:
