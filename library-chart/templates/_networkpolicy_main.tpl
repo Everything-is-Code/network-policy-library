@@ -1,21 +1,41 @@
 {{ define "network-policy-library.networkpolicy" }}
+{{- range .Values.networkpolicy }}
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: {{ .Release.Name }}-{{ .Values.networkpolicy.name}}
+  name: {{ .name}}
 spec:
-  podSelector: {{ .Values.networkpolicy.spec.podselector }}
-{{- if .Values.networking.spec.ingress }}
-  {{ include "network-policy-library.ingress" }}
+  podSelector: {{ .spec.podselector }}
+  {{- if .spec.ingress.enabled }}
+  ingress:
+    - ports:
+        - protocol: {{ .spec.ingress.protocol}}
+          port: {{ .spec.ingress.port}}
+    {{- if .spec.ingress.from.enabled }} 
+      from:
+        - podSelector: {{ .spec.ingress.podSelector}}
+            matchLabels:
+              kubernetes.io/metadata.name: {{ .spec.ingress.namespaceSelector}}
+    {{ end }}  
+  {{ end }}
+  {{- if .spec.egress }}
+  egress:
+    - ports:
+        - protocol: {{ .spec.egress.protocol}}
+          port: {{ .spec.egress.port}}
+    {{- if .spec.egress.to.enabled }}
+      to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: {{ .spec.egress.namespaceSelector}}
+    {{ end }}
+  {{ end }}
+  policyType: 
+  {{- if .spec.ingress.enabled }}
+    - Ingress
+  {{ end }}
+  {{- if .spec.egress }}
+    - Egress
+  {{ end }}
 {{ end }}
-{{- if .Values.networking.spec.ingress_wpodselector }}
-  {{ include "network-policy-library.ingress" }}
-{{ end }}
-{{- if .Values.networkpolicy.spec.egress }}
-  {{ include "network-policy-library.egress" }}
-{{ end }}
-{{- if .Values.networkpolicy.spec.egress_wpodselector }}
-  {{ include "network-policy-library.egress" }}
-{{ end }}
-  policyType: {{ .Values.networkpolicy.spec.policytypes }}
 {{- end }}
