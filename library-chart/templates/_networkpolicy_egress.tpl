@@ -1,4 +1,4 @@
-{{ define "library-chart.egress" }}
+{{ define "network-policy-library.egress" }}
   egress:
     - ports:
         - protocol: {{ .Values.networking.egress.protocol}}

@@ -1,4 +1,4 @@
-{{ define "library-chart.ingress_wpodselector.tpl" }}
+{{ define "network-policy-library.ingress_wpodselector.tpl" }}
   ingress:
     - ports:
         - protocol: {{ .Values.networking.ingress.protocol}}

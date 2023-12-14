@@ -1,4 +1,4 @@
-{{ define "library-chart.ingress" }}
+{{ define "network-policy-library.ingress" }}
   ingress:
     - ports:
         - protocol: {{ .Values.networking.ingress.protocol}}

@@ -1,4 +1,4 @@
-{{ define "library-chart.egress_wpodselector" }}
+{{ define "network-policy-library.egress_wpodselector" }}
   egress:
     - ports:
         - protocol: {{ .Values.networking.egress.protocol}}

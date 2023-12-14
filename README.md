@@ -1,5 +1,5 @@
 # library-demo
 
 ```
-$ helm package library-chart 
+$ helm package network-policy-library 
 ```
