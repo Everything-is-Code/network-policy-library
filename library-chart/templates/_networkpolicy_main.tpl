@@ -40,5 +40,4 @@ spec:
   {{- if .Values.networkpolicy.enabled.egress }}
     - Egress
   {{ end }}
-{{ end }}
 {{- end }}
