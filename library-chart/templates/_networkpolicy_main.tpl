@@ -4,37 +4,38 @@ kind: NetworkPolicy
 metadata:
   name: {{ .Release.Name }}-{{ .Values.networkpolicy.name}}
 spec:
-{{- range .Values.networkpolicy.policies }}
-  podSelector: {{ .spec.podselector }}
-  {{- if .spec.ingress.enabled }}
+  podSelector: {{ .Values.networkpolicy.spec.podselector }}
+  {{- if .Values.networkpolicy.spec.ingress.enabled }}
+    {{- range .Values.networkpolicy.spec.ingress }}
   ingress:
     - ports:
-        - protocol: {{ .spec.ingress.protocol}}
-          port: {{ .spec.ingress.port}}
-    {{- if .spec.ingress.from.enabled }} 
+        - protocol: {{ .protocol}}
+          port: {{ .port}}
+      {{- if .from.enabled }} 
       from:
-        - podSelector: {{ .spec.ingress.podSelector}}
+        - podSelector: {{ .podSelector}}
             matchLabels:
-              kubernetes.io/metadata.name: {{ .spec.ingress.podSelector}}
-    {{ end }}  
+              kubernetes.io/metadata.name: {{ .podSelector}}
+      {{ end }}  
+    {{ end }}
   {{ end }}
-  {{- if .spec.egress }}
+  {{- if .Values.networkpolicy.spec.egress }}
   egress:
     - ports:
-        - protocol: {{ .spec.egress.protocol}}
-          port: {{ .spec.egress.port}}
-    {{- if .spec.egress.to.enabled }}
+        - protocol: {{ .protocol}}
+          port: {{ .port}}
+    {{- if .to.enabled }}
       to:
         - namespaceSelector:
             matchLabels:
-              kubernetes.io/metadata.name: {{ .spec.egress.namespaceSelector}}
+              kubernetes.io/metadata.name: {{ .namespaceSelector}}
     {{ end }}
   {{ end }}
   policyTypes: 
-  {{- if .spec.ingress.enabled }}
+  {{- if .Values.networkpolicy.enabled.ingress }}
     - Ingress
   {{ end }}
-  {{- if .spec.egress }}
+  {{- if .Values.networkpolicy.enabled.egress }}
     - Egress
   {{ end }}
 {{ end }}
