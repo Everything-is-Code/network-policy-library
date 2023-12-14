@@ -15,7 +15,7 @@ spec:
       from:
         - podSelector: {{ .spec.ingress.podSelector}}
             matchLabels:
-              kubernetes.io/metadata.name: {{ .spec.ingress.namespaceSelector}}
+              kubernetes.io/metadata.name: {{ .spec.ingress.podSelector}}
     {{ end }}  
   {{ end }}
   {{- if .spec.egress }}
