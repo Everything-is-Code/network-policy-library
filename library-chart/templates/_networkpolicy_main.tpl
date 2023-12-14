@@ -6,8 +6,8 @@ metadata:
 spec:
   podSelector: {{ .Values.networkpolicy.spec.podselector }}
   {{- if .Values.networkpolicy.enabled.ingress }}
-    {{- range .Values.networkpolicy.spec.ingress }}
   ingress:
+    {{- range .Values.networkpolicy.spec.ingress }}
     - ports:
         - protocol: {{ .protocol}}
           port: {{ .port}}
@@ -20,8 +20,8 @@ spec:
     {{ end }}
   {{ end }}
   {{- if .Values.networkpolicy.enabled.egress }}
-    {{- range .Values.networkpolicy.spec.egress }}
   egress:
+    {{- range .Values.networkpolicy.spec.egress }}
     - ports:
         - protocol: {{ .protocol}}
           port: {{ .port}}
