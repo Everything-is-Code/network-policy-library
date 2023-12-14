@@ -9,13 +9,13 @@ spec:
   ingress:
     {{- range .Values.networkpolicy.spec.ingress }}
     - ports:
-        - protocol: {{ .protocol}}
-          port: {{ .port}}
+        - protocol: {{ .protocol }}
+          port: {{ .port }}
       {{- if .from.enabled }} 
       from:
-        - podSelector: {{ .podSelector}}
+        - podSelector: {{ .from.podSelector }}
             matchLabels:
-              kubernetes.io/metadata.name: {{ .podSelector}}
+              kubernetes.io/metadata.name: {{ .from.podSelector }}
       {{ end }}  
     {{ end }}
   {{ end }}
@@ -23,13 +23,13 @@ spec:
   egress:
     {{- range .Values.networkpolicy.spec.egress }}
     - ports:
-        - protocol: {{ .protocol}}
-          port: {{ .port}}
+        - protocol: {{ .protocol }}
+          port: {{ .port }}
     {{- if .to.enabled }}
       to:
         - namespaceSelector:
             matchLabels:
-              kubernetes.io/metadata.name: {{ .namespaceSelector}}
+              kubernetes.io/metadata.name: {{ .to.namespaceSelector }}
       {{ end }}
     {{ end }}
   {{ end }}

@@ -2,12 +2,12 @@ apiVersion: v1
 entries:
   network-policy-library:
   - apiVersion: v2
-    created: "2023-12-15T00:46:04.713912+01:00"
+    created: "2023-12-15T00:48:31.181706+01:00"
     description: A Helm library chart for Kubernetes network policies
-    digest: 758120321b0b79dc178e9c8f3a536dc1dd1fed789900a9e1c06256ed8b11cf2b
+    digest: bb55bae9f97f4e3d0641ca46ce695318b8122bfc6a4e7b5a527709ec40d8156e
     name: network-policy-library
     type: library
     urls:
     - network-policy-library-0.0.1.tgz
     version: 0.0.1
-generated: "2023-12-15T00:46:04.713343+01:00"
+generated: "2023-12-15T00:48:31.181333+01:00"
