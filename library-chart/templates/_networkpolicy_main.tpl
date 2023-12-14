@@ -4,7 +4,7 @@ kind: NetworkPolicy
 metadata:
   name: {{ .Release.Name }}-{{ .Values.networkpolicy.name}}
 spec:
-{{- range .Values.networkpolicy }}
+{{- range .Values.networkpolicy.policies }}
   podSelector: {{ .spec.podselector }}
   {{- if .spec.ingress.enabled }}
   ingress:
